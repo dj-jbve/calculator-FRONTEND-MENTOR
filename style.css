@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+    *,
+    ::before,
+    ::after{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .theme-1{
+        /*backgrounds*/
+        --mainbg:hsl(222, 26%, 31%);
+        --keypadbg: hsl(223, 31%, 20%);
+        --screenbg:hsl(224, 36%, 15%);
+        /*Keys*/
+        --keybg:hsl(225, 21%, 49%);
+        --keyshd: hsl(224, 28%, 35%);
+        --keyred:hsl(6, 63%, 50%);
+        --keyredshd:hsl(6, 70%, 34%);
+        --keyorg:hsl(30, 25%, 89%);
+        --keyorgshd:hsl(28, 16%, 65%);
+        /*Text*/
+        --txtdark:hsl(221, 14%, 31%);
+        --txtlight:hsl(0, 0%, 100%);
+        --txt-screen:hsl(0, 0%, 100%);
+        --txt-equal: hsl(0, 0%, 100%);
+    }
+    .theme-2{
+      /*backgrounds*/
+      --mainbg:hsl(0, 0%, 90%);
+      --keypadbg: hsl(0, 5%, 81%);
+      --screenbg:hsl(0, 0%, 93%);
+      /*Keys*/
+      --keybg:hsl(185, 42%, 37%);
+      --keyshd: hsl(185, 58%, 25%);
+      --keyred:hsl(25, 98%, 40%);
+      --keyredshd:hsl(25, 99%, 27%);
+      --keyorg:hsl(45, 7%, 89%);
+      --keyorgshd:hsl(35, 11%, 61%);
+      /*Text*/
+      --txtdark:hsl(60, 10%, 19%);
+      --txtlight:hsl(0, 0%, 100%);
+      --txt-screen:hsl(60, 10%, 19%);
+      --txt-equal:hsl(0, 0%, 100%) ;
+  }
+  .theme-3{
+      /*backgrounds*/
+      --mainbg:hsl(268, 75%, 9%);
+      --keypadbg: hsl(268, 71%, 12%);
+      --screenbg:hsl(268, 71%, 12%);
+      /*Keys*/
+      --keybg:hsl(281, 89%, 26%);
+      --keyshd: hsl(285, 91%, 52%);
+      --keyred:hsl(176, 100%, 44%);
+      --keyredshd:hsl(177, 92%, 70%);
+      --keyorg:hsl(268, 47%, 21%);
+      --keyorgshd:hsl(290, 70%, 36%);
+      /*Text*/
+      --txtdark:hsl(52, 100%, 62%);
+      --txtlight:hsl(0, 0%, 100%);
+      --txt-screen:hsl(52, 100%, 62%);
+      --txt-equal: hsl(198, 20%, 13%);
+      
+  }
+
+    #body{
+      background: var(--mainbg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Spartan', sans-serif;
+      font-size: 16px;
+      height: 100vh;
+    }
+    main{
+      min-width: 350px;
+    }
+    header{
+      display:flex;
+      flex-direction: row;
+      justify-content: space-between;
+      color:var(--txt-screen);
+      align-items: center;
+    }
+    #selector-cont{
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      text-transform: uppercase;
+      font-size: 0.5rem;
+      min-width: 25%;
+      gap:5px;
+
+    }
+    .selector{
+      display:flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    #theme{
+      margin: 0.2rem;
+    }
+    .num-selector{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+    }
+    .switch-cont{
+      max-width: 50px;
+      background-color: var(--keypadbg);
+      border-radius: 0.89rem;
+
+      display: flex;
+      justify-content:flex-start;/*PROPIEDAD A CAMBIAR PARA MODIFICAR LA POSICIÓN DEL SWITCH*/
+    }
+    .switch{
+      width: 100%;
+      background-color: var(--keyred);
+      border-radius: 50%;
+      cursor:grab;
+      padding:0.2rem 0.3em;
+
+    }
+    .switch:active{
+      cursor: grabbing;
+    }
+    input[type=range]{
+        -webkit-appearance: none;
+        width: 100%;
+        background: transparent;
+    }
+    input[type=range]::-webkit-slider-thumb{
+        -webkit-appearance: none;
+        border:none;
+        width: 0.7rem;
+        height: 0.7rem;
+        background-color: var(--keyred);;
+        border-radius: 50%;
+        
+    }
+    input[type=range]::-moz-range-thumb{
+        -webkit-appearance: none;
+        border:none;
+        width: 0.7rem;
+        height: 0.7rem;
+        background-color: var(--keyred);
+        border-radius: 50%;
+        
+    }
+
+    #screen{
+      width: 100%;
+      max-width: 14ch;
+      background-color: var(--screenbg);
+      text-align: right;
+      padding: 0.8em 0.5em;
+      margin: 1rem 0;
+      border-radius: 0.5rem;
+      font-size: 2rem;
+      color:var(--txt-screen);
+      min-height: 2.8em;
+      overflow: hidden;
+    }
+    #operation{
+      font-size: 0.4em;
+      opacity: 50%;
+      margin-bottom:0.2em ;
+    }
+    #numpad-cont{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding:1.5em;
+      gap: 1em;
+      background-color: var(--keypadbg);
+      border-radius: 0.5rem;
+    }
+    .btn{
+      cursor: pointer;
+      color:var(--txtdark);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--keyorg);
+      border-radius: 0.3em;
+      box-shadow: 0 3px 0 var(--keyorgshd);
+      padding:0.5rem 0.5rem;
+      font-size:1.3rem;
+    }
+    
+    .func{
+      font-size: 0.8rem;
+    }
+    .btn-function{
+      color:var(--txtlight);
+      background-color: var(--keybg);
+      box-shadow: 0 3px 0 var(--keyshd);
+    }
+    #reset{
+      grid-column: 1 / 3;
+    }
+    .equal{
+      grid-column: 3 / -1;
+      color: var(--txt-equal);
+      background-color: var(--keyred);
+      box-shadow: 0 3px 0 var(--keyredshd);
+    }
+    .btn:active{
+      transform: translateY(3px);
+      box-shadow: 0 0 0;
+    }
+    .attribution {font-size: 11px; text-align: center; margin: 2em;}
+    .attribution a { color: var(--txt-screen); }
+
+
