@@ -73,7 +73,7 @@
       height: 100vh;
     }
     main{
-      min-width: 350px;
+      margin: 0 10px;
     }
     header{
       display:flex;
@@ -211,5 +211,11 @@
     }
     .attribution {font-size: 11px; text-align: center; margin: 2em;}
     .attribution a { color: var(--txt-screen); }
+
+  @media (min-width: 375px){
+    main{
+      min-width: 350px;
+    }
+  }
 
 
